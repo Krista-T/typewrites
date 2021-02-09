@@ -1,19 +1,22 @@
 "use strict";
-window.addEventListener("DOMContentLoaded", getTitle);
-let title = document.querySelector(".typewritten").textContent;
-let i = 0;
+window.addEventListener("DOMContentLoaded", typeWriterText);
+const title = document.querySelector(".typewritten").textContent;
+let textDisplay = "";
 
-function getTitle() {
-  //clear the HTML area
-  document.querySelector(".typewritten").textContent = "";
-  startTypewriter();
-}
-
-function startTypewriter() {
-  if (i < title.length) {
-    document.querySelector(".typewritten").innerHTML +=
-      title.charAt(i) + "<span> </span>";
-    i++;
-    setTimeout(getTitle, 500);
+function typeWriterText() {
+  for (let i = 0; i < title.length; i++) {
+    setTimeout(() => {
+      textDisplay += title.charAt(i);
+      document.querySelector(".typewritten").innerHTML = textDisplay;
+      console.log(textDisplay);
+    }, i * 250);
   }
+  // startTimer();
 }
+
+// let time;
+// function startTimer() {
+//   time = setInterval(() => {
+//     location.reload();
+//   }, 14000);
+// }
