@@ -11,12 +11,14 @@ function typeWriterText() {
       console.log(textDisplay);
     }, i * 250);
   }
-  // startTimer();
+  startTimer();
 }
 
-// let time;
-// function startTimer() {
-//   time = setInterval(() => {
-//     location.reload();
-//   }, 14000);
-// }
+//terrible solution
+let time;
+function startTimer() {
+  console.log("this is terrible solution");
+  time = setInterval(() => {
+    location.reload();
+  }, 14000);
+}
